@@ -3,9 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Calculator BMI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            background-color: #6200ea;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin: 20px 0;
+        }
+        section {
+            border: 1px solid #ddd;
+            background-color: white;
+            padding: 20px;
+            flex: 1;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit {
+            background-color: #6200ea;
+            color: white;
+        }
+        .reset {
+            background-color: #f44336;
+            color: white;
+        }
+        .result-section h2 {
+            color: #6200ea;
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Calculator BMI</h1>
+    </header>
+
+    <main>
+        <!-- Left content -->
+        <section>
+            <article>
+                <p>Masukkan data sesuai dirimu yaa</p>
+            </article>
+
+            <!-- Form -->
+            <section>
+                <form>
+                    <div>
+                        <div class="input-title">Jenis Kelamin</div>
+                        <input type="radio" id="selection-man" name="gender"><label for="selection-man">Laki-Laki</label>
+                        <input type="radio" id="selection-woman" name="gender"><label for="selection-woman">Perempuan</label>
+                    </div>
+                    <div>
+                        <label for="input-berat-badan">Berat Badan (kg)</label>
+                        <input type="number" id="input-berat-badan">
+                    </div>
+                    <div>
+                        <label for="input-usia">Usia (tahun)</label>
+                        <input type="number" id="input-usia">
+                    </div>
+                    <div>
+                        <label for="input-tinggi-badan">Tinggi Badan (cm)</label>
+                        <input type="number" id="input-tinggi-badan">
+                    </div>
+                    <div>
+                        <button type="button" class="button submit">Submit BMI</button>
+                        <button type="reset" class="button reset">Reset</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Additional information -->
+            <section>
+                <header>
+                    <h2>Keunggulan Fitur</h2>
+                </header>
+                <article>
+                    <p>1. menghitung berat badan</p>
+                    <p>2. menentukan kategori berat badan ideal atau tidak</p>
+                    <p>3. memberikan informasi program diet sehat</p>
+                </article>
+            </section>
+        </section>
+       <!-- Right content -->
+       <section class="text-align-center">
+        <article>
+            <header>
+                <h1>Result</h1>
+            </header>
+            <section class="result-section">
+                <p>Hasil result adalah:</p>
+                <h2>24.7</h2>
+                <p><h5>Anda memiliki berat badan berlebih</h5></p>
+            </section>
+        </article>
+    </section>
+</main>
 </body>
 </html>
