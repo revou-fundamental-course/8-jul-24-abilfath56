@@ -4,74 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator BMI</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        header {
-            text-align: center;
-            background-color: #6200ea;
-            color: white;
-            padding: 20px 0;
-            width: 100%;
-        }
-        main {
-            display: flex;
-            justify-content: space-around;
-            width: 80%;
-            margin: 20px 0;
-        }
-        section {
-            border: 1px solid #ddd;
-            background-color: white;
-            padding: 20px;
-            flex: 1;
-            margin: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .input-title {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        label {
-            margin-bottom: 5px;
-        }
-        input[type="number"] {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
-        .button {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .submit {
-            background-color: #6200ea;
-            color: white;
-        }
-        .reset {
-            background-color: #f44336;
-            color: white;
-        }
-        .result-section h2 {
-            color: #6200ea;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
@@ -138,42 +71,6 @@
             </article>
         </section>
     </main>
-    <script>
-        document.getElementById('submit-button').addEventListener('click', calculateBMI);
-
-        function calculateBMI() {
-            // Ambil nilai berat badan, tinggi badan, dan usia dari input
-            const weight = parseFloat(document.getElementById('input-berat-badan').value);
-            const height = parseFloat(document.getElementById('input-tinggi-badan').value) / 100; // Konversi cm ke m
-            const age = parseInt(document.getElementById('input-usia').value);
-            const gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : null;
-
-            // Cek apakah input valid
-            if (isNaN(weight) || isNaN(height) || isNaN(age) || !gender || weight <= 0 || height <= 0 || age <= 0) {
-                document.getElementById('bmi-result').innerText = '0';
-                document.getElementById('bmi-category').innerText = 'Harap masukkan nilai yang valid untuk semua input.';
-                return;
-            }
-
-            // Hitung BMI
-            const bmi = weight / (height * height);
-
-            // Tentukan kategori BMI
-            let category = '';
-            if (bmi < 18.5) {
-                category = 'Kurus (Underweight)';
-            } else if (bmi >= 18.5 && bmi < 24.9) {
-                category = 'Normal';
-            } else if (bmi >= 25 && bmi < 29.9) {
-                category = 'Kegemukan (Overweight)';
-            } else {
-                category = 'Obesitas (Obesity)';
-            }
-
-            // Tampilkan hasil
-            document.getElementById('bmi-result').innerText = bmi.toFixed(2);
-            document.getElementById('bmi-category').innerText = `Anda ${category}`;
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
